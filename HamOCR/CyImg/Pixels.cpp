@@ -68,7 +68,7 @@ const unsigned char * Pixels::GetRaw() const
 		(*tRaw)[i + 2] = p.B();
 		i += components;//真是让人矛盾啊，components难道不是必然是3吗?
 	}
-	return tRaw;
+	return *tRaw;
 }
 
 Pixels::~Pixels()
