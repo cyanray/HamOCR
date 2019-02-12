@@ -1,9 +1,7 @@
 #include "Pixels.h"
 #include "jpegHelper/jpegHelper.h"
 using std::exception;
-Pixels::Pixels()
-{
-}
+
 
 void Pixels::LoadFromJpegFile(const string & filename)
 {
@@ -58,7 +56,21 @@ void Pixels::SaveAsJpeg(const string & filename)
 }
 
 
+const unsigned char * Pixels::GetRaw() const
+{
+	if (!tRaw) delete[] * tRaw;//删除上次的tRaw
+	*tRaw = new unsigned char[width * height * components]{ 0 };
+	unsigned int i = 0;
+	for (auto p : raw)
+	{
+		(*tRaw)[i] = p.R();
+		(*tRaw)[i + 1] = p.G();
+		(*tRaw)[i + 2] = p.B();
+		i += components;//真是让人矛盾啊，components难道不是必然是3吗?
+	}
+}
+
 Pixels::~Pixels()
 {
-
+	if (!tRaw) delete[] * tRaw;
 }
