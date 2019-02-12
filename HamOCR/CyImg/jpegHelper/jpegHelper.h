@@ -21,7 +21,7 @@ public:
 		unsigned int & output_components);
 	static void SaveTo(
 		const char * filename,
-		unsigned char *img_buff,
+		const unsigned char *img_buff,
 		const unsigned int width,
 		const unsigned int height,
 		const unsigned int quality = 50

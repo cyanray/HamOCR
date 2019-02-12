@@ -97,7 +97,7 @@ void jpegHelper::ReadFromBytes(
 
 void jpegHelper::SaveTo(
 	const char * filename, 
-	unsigned char * img_buff,
+	const unsigned char * img_buff,
 	const unsigned int width,
 	const unsigned int height,
 	const unsigned int quality)
@@ -123,12 +123,13 @@ void jpegHelper::SaveTo(
 	jpeg_start_compress(&cinfo, TRUE);
 	row_stride = width * 3;	/* JSAMPLEs per row in image_buffer */
 
+	unsigned char *imgbuf = const_cast<unsigned char *>(img_buff);
 	while (cinfo.next_scanline < cinfo.image_height) {
 		/* jpeg_write_scanlines expects an array of pointers to scanlines.
 		 * Here the array is only one element long, but you could pass
 		 * more than one scanline at a time if that's more convenient.
 		 */
-		row_pointer[0] = &img_buff[cinfo.next_scanline * row_stride];
+		row_pointer[0] = &imgbuf[cinfo.next_scanline * row_stride];
 		(void)jpeg_write_scanlines(&cinfo, row_pointer, 1);
 	}
 	jpeg_finish_compress(&cinfo);
