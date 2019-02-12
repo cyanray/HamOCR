@@ -10,7 +10,7 @@ void Pixels::LoadFromJpegFile(const string & filename)
 	unsigned char *imgBuff = nullptr;
 	try
 	{
-		jpegHelper::read_JPEG_file(filename.data(), &imgBuff, width, height, components);
+		jpegHelper::ReadFromFile(filename.data(), &imgBuff, width, height, components);
 	}
 	catch (exception &ex)
 	{
@@ -26,6 +26,21 @@ void Pixels::LoadFromJpegFile(const string & filename)
 
 void Pixels::LoadFromJpegBytes(unsigned char bytes[], size_t length)
 {
+	unsigned char *imgBuff = nullptr;
+	try
+	{
+		jpegHelper::ReadFromBytes(bytes,length, &imgBuff, width, height, components);
+	}
+	catch (exception &ex)
+	{
+		throw ex;
+	}
+	raw.reserve(width*height);
+	size_t length = width * height * components;
+	for (size_t i = 0; i < length; i += components)
+	{
+		raw.push_back(Pixel(imgBuff[i], imgBuff[i + 1], imgBuff[i + 2]));
+	}
 }
 
 void Pixels::SaveAsJpeg(const string & filename)
