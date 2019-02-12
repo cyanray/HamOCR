@@ -8,7 +8,14 @@ public:
 	jpegHelper();
 	static void read_JPEG_file(
 		const char * filename,
-		unsigned char ** img_buff,
+		unsigned char ** img_buff,//output_img_bytes
+		unsigned int & output_width,
+		unsigned int & output_height,
+		unsigned int & output_components);
+	static void read_JPEG_bytes(
+		const unsigned char bytes[],//input_bytes
+		const unsigned int length,//input_bytes_length
+		unsigned char ** img_buff,//output_img_bytes
 		unsigned int & output_width,
 		unsigned int & output_height,
 		unsigned int & output_components);
