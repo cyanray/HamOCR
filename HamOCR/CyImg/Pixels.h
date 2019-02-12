@@ -14,6 +14,7 @@ public:
 	~Pixels();
 private:
 	vector<Pixel> raw;
+	unsigned char *raw_bytes;
 	unsigned int width;
 	unsigned int height;
 	unsigned int components;
