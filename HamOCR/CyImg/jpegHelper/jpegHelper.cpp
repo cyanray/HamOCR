@@ -1,4 +1,3 @@
-#include "pch.h"
 #include "jpegHelper.h"
 #include <exception>
 using std::exception;

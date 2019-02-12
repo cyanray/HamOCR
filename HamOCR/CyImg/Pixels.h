@@ -1,5 +1,5 @@
 #pragma once
-#include "Pixel.h"
+#include "pixel/pixel.h"
 #include <vector>
 #include <string>
 using std::string;

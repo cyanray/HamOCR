@@ -1,6 +1,5 @@
-#include "pch.h"
 #include "Pixels.h"
-#include "jpegHelper.h"
+#include "jpegHelper/jpegHelper.h"
 using std::exception;
 Pixels::Pixels()
 {
