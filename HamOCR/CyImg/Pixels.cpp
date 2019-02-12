@@ -56,22 +56,22 @@ void Pixels::SaveAsJpeg(const string & filename)
 }
 
 
-const unsigned char * Pixels::GetRaw() const
+const unsigned char * Pixels::GetRaw()
 {
-	if (!tRaw) delete[] * tRaw;//删除上次的tRaw
-	*tRaw = new unsigned char[width * height * components]{ 0 };
+	delete[] tRaw;//删除上次的tRaw
+	tRaw = new unsigned char[width * height * components]{ 0 };
 	unsigned int i = 0;
 	for (auto p : raw)
 	{
-		(*tRaw)[i] = p.R();
-		(*tRaw)[i + 1] = p.G();
-		(*tRaw)[i + 2] = p.B();
+		(tRaw)[i] = p.R();
+		(tRaw)[i + 1] = p.G();
+		(tRaw)[i + 2] = p.B();
 		i += components;//真是让人矛盾啊，components难道不是必然是3吗?
 	}
-	return *tRaw;
+	return tRaw;
 }
 
 Pixels::~Pixels()
 {
-	if (!tRaw) delete[] * tRaw;
+	delete[] tRaw;//删除上次的tRaw
 }
