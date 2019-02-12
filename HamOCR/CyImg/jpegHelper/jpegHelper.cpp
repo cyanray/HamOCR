@@ -1,7 +1,7 @@
 #include "jpegHelper.h"
 #include <exception>
 using std::exception;
-void jpegHelper::read_JPEG_file(
+void jpegHelper::ReadFromFile(
 	const char * filename,
 	unsigned char **img_buff,
 	unsigned int &output_width,
@@ -51,7 +51,7 @@ void jpegHelper::read_JPEG_file(
 	fclose(infile);
 }
 
-void jpegHelper::read_JPEG_bytes(
+void jpegHelper::ReadFromBytes(
 	const unsigned char bytes[],
 	const unsigned int length, 
 	unsigned char ** img_buff,
@@ -95,7 +95,7 @@ void jpegHelper::read_JPEG_bytes(
 	jpeg_destroy_decompress(&cinfo);
 }
 
-void jpegHelper::save_JPEG(
+void jpegHelper::SaveTo(
 	const char * filename, 
 	unsigned char * img_buff,
 	const unsigned int width,

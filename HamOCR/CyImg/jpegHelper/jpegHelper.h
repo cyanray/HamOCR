@@ -6,20 +6,20 @@ class jpegHelper
 {
 public:
 	jpegHelper();
-	static void read_JPEG_file(
+	static void ReadFromFile(
 		const char * filename,
 		unsigned char ** img_buff,//output_img_bytes
 		unsigned int & output_width,
 		unsigned int & output_height,
 		unsigned int & output_components);
-	static void read_JPEG_bytes(
+	static void ReadFromBytes(
 		const unsigned char bytes[],//input_bytes
 		const unsigned int length,//input_bytes_length
 		unsigned char ** img_buff,//output_img_bytes
 		unsigned int & output_width,
 		unsigned int & output_height,
 		unsigned int & output_components);
-	static void save_JPEG(
+	static void SaveTo(
 		const char * filename,
 		unsigned char *img_buff,
 		const unsigned int width,
