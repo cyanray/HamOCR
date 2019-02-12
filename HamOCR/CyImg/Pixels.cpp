@@ -47,6 +47,14 @@ void Pixels::LoadFromJpegBytes(unsigned char bytes[], size_t length)
 
 void Pixels::SaveAsJpeg(const string & filename)
 {
+	try
+	{
+		jpegHelper::SaveTo(filename.data(), raw_bytes, width, height, 100);
+	}
+	catch (exception &ex)
+	{
+		throw ex;
+	}
 }
 
 
