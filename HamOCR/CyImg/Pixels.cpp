@@ -25,12 +25,12 @@ void Pixels::LoadFromJpegFile(const string & filename)
 	raw_bytes = imgBuff;
 }
 
-void Pixels::LoadFromJpegBytes(unsigned char bytes[], size_t length)
+void Pixels::LoadFromJpegBytes(unsigned char bytes[], size_t length_)
 {
 	unsigned char *imgBuff = nullptr;
 	try
 	{
-		jpegHelper::ReadFromBytes(bytes,length, &imgBuff, width, height, components);
+		jpegHelper::ReadFromBytes(bytes,length_, &imgBuff, width, height, components);
 	}
 	catch (exception &ex)
 	{
