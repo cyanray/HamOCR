@@ -61,7 +61,7 @@ const unsigned char * Pixels::GetRaw()
 	delete[] tRaw;//É¾³ýÉÏ´ÎµÄtRaw
 	tRaw = new unsigned char[width * height * components]{ 0 };
 	unsigned int i = 0;
-	for (auto p : raw)
+	for (auto &p : raw)
 	{
 		(tRaw)[i] = p.R();
 		(tRaw)[i + 1] = p.G();

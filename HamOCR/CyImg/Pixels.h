@@ -12,6 +12,7 @@ public:
 	void LoadFromJpegBytes(unsigned char bytes[], size_t length);
 	void SaveAsJpeg(const string & filename);
 	vector<Pixel> & GetPixels() { return raw; }
+	void SetPixels(vector<Pixel> p) { raw = p; }
 	const unsigned char *GetRaw();
 	~Pixels();
 private:
