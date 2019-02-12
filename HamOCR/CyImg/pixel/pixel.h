@@ -7,6 +7,7 @@ public:
 	Pixel &R(unsigned char r) { R_ = r; return *this; }
 	Pixel &G(unsigned char g) { G_ = g; return *this; }
 	Pixel &B(unsigned char b) { B_ = b; return *this; }
+	Pixel &RGB(unsigned char r, unsigned char g, unsigned char b) { R_ = r, G_ = g, B_ = b; return *this; }
 	unsigned char R() const { return R_; }
 	unsigned char G() const { return G_; }
 	unsigned char B() const { return B_; }

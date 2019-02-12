@@ -7,7 +7,26 @@ using std::vector;
 class Pixels
 {
 public:
-	Pixels() :tRaw(nullptr) {}
+	Pixels() :tRaw(nullptr),components(3) {}
+	Pixels(const Pixels &p)
+	{
+		this->raw = p.raw;
+		this->tRaw = nullptr;
+		this->width = p.width;
+		this->height = p.height;
+		this->components = p.components;
+	}
+	Pixels & operator=(const Pixels &p)
+	{
+		this->raw = p.raw;
+		this->tRaw = nullptr;
+		this->width = p.width;
+		this->height = p.height;
+		this->components = p.components;
+	}
+	unsigned int width;
+	unsigned int height;
+	unsigned int components;
 	void LoadFromJpegFile(const string & filename);
 	void LoadFromJpegBytes(unsigned char bytes[], size_t length);
 	void SaveAsJpeg(const string & filename);
@@ -18,10 +37,5 @@ public:
 private:
 	vector<Pixel> raw;
 	unsigned char *tRaw;//调用GetRaw时，生成的bytes存入这里，每次调用都会删掉上次生成的tRaw
-	unsigned int width;
-	unsigned int height;
-	unsigned int components;
-	Pixels(const Pixels &);//不允许复制
-	Pixels & operator=(const Pixels &);//不允许赋值
 };
 
