@@ -22,7 +22,7 @@ void Pixels::LoadFromJpegFile(const string & filename)
 	{
 		raw.push_back(Pixel(imgBuff[i], imgBuff[i + 1], imgBuff[i + 2]));
 	}
-	raw_bytes = imgBuff;
+	delete[] imgBuff;
 }
 
 void Pixels::LoadFromJpegBytes(unsigned char bytes[], size_t length_)
@@ -42,14 +42,14 @@ void Pixels::LoadFromJpegBytes(unsigned char bytes[], size_t length_)
 	{
 		raw.push_back(Pixel(imgBuff[i], imgBuff[i + 1], imgBuff[i + 2]));
 	}
-	raw_bytes = imgBuff;
+	delete[] imgBuff;
 }
 
 void Pixels::SaveAsJpeg(const string & filename)
 {
 	try
 	{
-		jpegHelper::SaveTo(filename.data(), raw_bytes, width, height, 100);
+		jpegHelper::SaveTo(filename.data(), GetRaw(), width, height, 100);
 	}
 	catch (exception &ex)
 	{
@@ -60,5 +60,5 @@ void Pixels::SaveAsJpeg(const string & filename)
 
 Pixels::~Pixels()
 {
-	delete[] raw_bytes;
+
 }
