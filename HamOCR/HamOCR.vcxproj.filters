@@ -24,12 +24,18 @@
     <ClInclude Include="CyImg\jpegHelper\jpegHelper.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="CyImg\Pixels.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CyImg\pixel\Pixel.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="CyImg\jpegHelper\jpegHelper.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CyImg\Pixels.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
