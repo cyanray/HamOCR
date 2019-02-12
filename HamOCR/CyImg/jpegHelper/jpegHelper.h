@@ -19,6 +19,13 @@ public:
 		unsigned int & output_width,
 		unsigned int & output_height,
 		unsigned int & output_components);
+	static void save_JPEG(
+		const char * filename,
+		unsigned char *img_buff,
+		const unsigned int width,
+		const unsigned int height,
+		const unsigned int quality = 50
+	);
 	~jpegHelper();
 private:
 	struct my_error_mgr {
