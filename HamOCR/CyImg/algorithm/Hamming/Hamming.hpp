@@ -1,15 +1,9 @@
 #pragma once
+#include "../../Pixels.h"
 namespace Cyan
 {
-	struct Identity
+	unsigned int CalcHamming(Pixels & imgA, Pixels & imgB)
 	{
-		Identity() {}
-		Identity(unsigned char* r) : raw(r) {}
-		unsigned char *raw;
-		unsigned int length;
-		~Identity()
-		{
-			delete[] raw;
-		}
-	};
+
+	}
 }
