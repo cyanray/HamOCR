@@ -30,6 +30,9 @@
     <ClInclude Include="CyImg\algorithm\t.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="CyImg\algorithm\Hamming\Hamming.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CyImg\pixel\Pixel.cpp">
