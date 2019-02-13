@@ -27,10 +27,13 @@
     <ClInclude Include="CyImg\Pixels.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="CyImg\algorithm\t.hpp">
+    <ClInclude Include="CyImg\algorithm\Hamming\Hamming.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="CyImg\algorithm\Hamming\Hamming.hpp">
+    <ClInclude Include="CyImg\algorithm\Binarize.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CyImg\algorithm\Split.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

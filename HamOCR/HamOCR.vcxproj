@@ -148,8 +148,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CyImg\algorithm\Binarize.hpp" />
     <ClInclude Include="CyImg\algorithm\Hamming\Hamming.hpp" />
-    <ClInclude Include="CyImg\algorithm\t.hpp" />
+    <ClInclude Include="CyImg\algorithm\Split.hpp" />
     <ClInclude Include="CyImg\pixel\pixel.h" />
     <ClInclude Include="CyImg\jpegHelper\jpegHelper.h" />
     <ClInclude Include="CyImg\Pixels.h" />

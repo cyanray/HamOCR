@@ -32,7 +32,8 @@ public:
 	void SaveAsJpeg(const string & filename);
 	vector<Pixel> & GetPixels() { return raw; }
 	void SetPixels(vector<Pixel> p) { raw = p; }
-	const unsigned char *GetRaw();//该指针由Pixels管理，请勿主动释放
+	//该指针由Pixels管理，请勿主动释放
+	const unsigned char *GetRaw();
 	~Pixels();
 private:
 	vector<Pixel> raw;
