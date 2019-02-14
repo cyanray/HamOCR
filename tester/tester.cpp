@@ -67,6 +67,8 @@ int main()
 	try
 	{
 		hdh.Open("E:\\TestData\\splited\\A.hdat");
+		auto a = hdh.ReadOne();
+		cout << a.str << endl;
 	}
 	catch (const exception&ex)
 	{

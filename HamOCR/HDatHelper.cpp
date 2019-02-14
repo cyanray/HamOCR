@@ -38,6 +38,7 @@ HDat HDatHelper::ReadOne()
 	//接下来读取“图片标识”
 	unsigned char *data_buff = new unsigned char[len_buf];
 	fread(data_buff, len_buf, 1, fp);
+	t.data = data_buff;
 	return t;
 }
 

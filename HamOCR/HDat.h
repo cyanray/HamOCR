@@ -6,7 +6,7 @@
 using std::string;
 struct HDat
 {
-	HDat() :use_count(new unsigned int(1)) {}
+	HDat() :use_count(new unsigned int(1)), data(nullptr) {}
 	HDat(const HDat& h)
 	{
 		++*h.use_count;
@@ -31,8 +31,8 @@ struct HDat
 	string str = "";
 	unsigned int length;
 	unsigned char *data;
-	~HDat() 
-	{ 
+	~HDat()
+	{
 		if (--*use_count == 0)
 		{
 			delete[] data;
