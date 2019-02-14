@@ -62,13 +62,17 @@ int main()
 	//}
 
 	HamOCR ocr;
-	//ocr.CreateDataFile("E:\\TestData\\splited", "E:\\TestData\\splited\\A.hdat");
+	ocr.CreateDataFile("E:\\TestData\\splited", "E:\\TestData\\splited\\B.hdat");
 	HDatHelper hdh;
 	try
 	{
-		hdh.Open("E:\\TestData\\splited\\A.hdat");
-		auto a = hdh.ReadOne();
-		cout << a.str << endl;
+		hdh.Open("E:\\TestData\\splited\\B.hdat");
+		while (true)
+		{
+			if (hdh.AtEOF()) break;
+			auto a = hdh.ReadOne();
+			cout << a.str << " " << a.length << endl;
+		}
 	}
 	catch (const exception&ex)
 	{

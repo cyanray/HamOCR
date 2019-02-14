@@ -1,25 +1,22 @@
 #pragma once
+#include <fstream>
 #include "HDat.h"
+using std::fstream;
 class HDatHelper
 {
 public:
-	HDatHelper() :fp(nullptr) {}
+	HDatHelper() {}
 	//打开一个HDat文件
 	void Open(const string & filename);
 	//创建一个HDat文件(如文件已存在则覆盖)
 	void Create(const string & filename);
+	bool AtEOF() { return (hdFile.peek() == EOF) || hdFile.eof(); }
 	//读取一个HDat数据
 	HDat ReadOne();
 	//在末尾加入一个HDat数据
 	void AppendOne(HDat &hdat);
-	//不是必须的，可以不调用它
-	void Close() 
-	{
-		if (fp != nullptr) fclose(fp);
-		fp = nullptr;//防止虚构函数再次对fp使用fclose()
-	}
-	~HDatHelper() { if (fp != nullptr) fclose(fp); }
+	~HDatHelper() { hdFile.close(); }
 private:
-	FILE *fp;
+	fstream hdFile;
 };
 
