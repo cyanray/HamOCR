@@ -9,7 +9,7 @@ namespace Cyan
 		unsigned int X;
 		unsigned int Y;
 	};
-	Pixels Split(Pixels & img,Point & a, Point & b)
+	Pixels Split(Pixels & img,const Point & a, const Point & b)
 	{
 		Pixels t;
 		vector<Pixel> tvp, ovp = img.GetPixels();

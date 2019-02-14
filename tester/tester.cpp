@@ -40,12 +40,12 @@ int main()
 	//auto a4 = Split(img, 58, 4, 74, 20);
 	using namespace Cyan;
 	Pixels img;
-	img.LoadFromJpegFile("E:\\TestData\\verifyPic\\3.jpg");
+	img.LoadFromJpegFile("E:\\TestData\\verifyPic\\46.jpg");
 	RGB_Binarize(img, 170);
-	auto a = Split(img, 10, 4, 26, 20);
-	auto b = Split(img, 26, 4, 42, 20);
-	auto c = Split(img, 42, 4, 58, 20);
-	auto d = Split(img, 58, 4, 74, 20);
+	auto a = Split(img, Point(10, 4), Point(26, 20));
+	auto b = Split(img, Point(26, 4), Point(42, 20));
+	auto c = Split(img, Point(42, 4), Point(58, 20));
+	auto d = Split(img, Point(58, 4), Point(74, 20));
 
 	HamOCR ocr;
 	ocr.LoadDataFile("E:\\TestData\\splited\\B.hdat");
