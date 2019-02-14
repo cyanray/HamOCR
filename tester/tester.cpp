@@ -8,6 +8,7 @@
 //#include <CyImg/algorithm/Split.hpp>
 #include <boost/filesystem.hpp>
 #include <HamOCR.h>
+#include <HDatHelper.h>
 using namespace std;
 using namespace boost::filesystem;
 //void process(const path & p_)
@@ -60,8 +61,17 @@ int main()
 	//	}
 	//}
 
-	HamOCR ocr;
-	ocr.CreateDataFile("E:\\TestData\\splited", "E:\\TestData\\splited\\A.hdat");
+	//HamOCR ocr;
+	//ocr.CreateDataFile("E:\\TestData\\splited", "E:\\TestData\\splited\\A.hdat");
+	HDatHelper hdh;
+	try
+	{
+		hdh.Open("E:\\TestData\\splited\\A.hdat");
+	}
+	catch (const exception&ex)
+	{
+		cout << ex.what() << endl;
+	}
 	cin.get();
 	return 0;
 }

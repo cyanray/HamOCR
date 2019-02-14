@@ -12,6 +12,14 @@ void HDatHelper::Open(const string & filename)
 	}
 }
 
+void HDatHelper::Create(const string & filename)
+{
+	fp = fopen(filename.data(), "wb+");
+	if (fp == nullptr) throw std::exception("Open file failed.");
+	char identifier[] = "HamOCR\n";
+	fwrite(identifier, sizeof(identifier), 1, fp);
+}
+
 HDat HDatHelper::ReadOne()
 {
 	return HDat();
