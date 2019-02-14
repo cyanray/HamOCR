@@ -12,10 +12,6 @@ public:
 	HDat ReadOne();
 	//在末尾加入一个HDat数据
 	void AppendOne(HDat &hdat);
-	//删除所有名字为str的HDat数据
-	void RemoveAll(const string & str);
-	//删除所有HDat数据
-	void RemoveAll();
 	//不是必须的，可以不调用它
 	void Close() 
 	{

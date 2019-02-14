@@ -50,10 +50,3 @@ void HDatHelper::AppendOne(HDat & hdat)
 	fwrite(hdat.data, hdat.length, 1, fp);
 }
 
-void HDatHelper::RemoveAll(const string & str)
-{
-}
-
-void HDatHelper::RemoveAll()
-{
-}
