@@ -36,6 +36,12 @@
     <ClInclude Include="CyImg\algorithm\Split.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="HamOCR.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="HDatHelper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CyImg\pixel\Pixel.cpp">
@@ -45,6 +51,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="CyImg\Pixels.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="HamOCR.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="HDatHelper.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

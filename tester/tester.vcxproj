@@ -72,8 +72,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>E:\Project\HamOCR\HamOCR;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\libraries\_DEBUG_\libjpeg-turbo\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>E:\Project\HamOCR\HamOCR;E:\libraries\boost\include;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\libraries\_DEBUG_\libjpeg-turbo\lib;E:\libraries\boost\lib\MSVC14.1\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
