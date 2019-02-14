@@ -62,7 +62,7 @@ int main()
 	//}
 
 	HamOCR ocr;
-	ocr.CreateDataFile("E:\\TestData\\splited", "E:\\TestData\\splited\\B.hdat");
+	//ocr.CreateDataFile("E:\\TestData\\splited", "E:\\TestData\\splited\\B.hdat");
 	HDatHelper hdh;
 	try
 	{
