@@ -43,6 +43,10 @@ HDat HDatHelper::ReadOne()
 
 void HDatHelper::AppendOne(HDat & hdat)
 {
+	fseek(fp, 0, SEEK_END);
+	fwrite(hdat.str.data(), hdat.str.length() + 1, 1, fp);
+	fwrite(&hdat.length, sizeof(hdat.length), 1, fp);
+	fwrite(hdat.data, hdat.length, 1, fp);
 }
 
 void HDatHelper::RemoveAll(const string & str)
