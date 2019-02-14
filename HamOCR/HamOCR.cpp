@@ -1,5 +1,5 @@
 #include "HamOCR.h"
-
+#include "CyImg/algorithm/Hamming/Hamming.hpp"
 void HamOCR::CreateDataFile(const string & folder, const string & output_file_path)
 {
 	HDatHelper hh;
@@ -68,5 +68,16 @@ void HamOCR::LoadDataFile(const string & filename)
 
 string HamOCR::OCR(Pixels & img)
 {
-	return string();
+	unsigned int minVal = -1;//初始化为最大值
+	string cVal;
+	for (auto& x : HDats)
+	{
+		unsigned int t = Cyan::CalcHamming(img, x.data);
+		if (t<minVal)
+		{
+			minVal = t;
+			cVal = x.str;
+		}
+	}
+	return cVal;
 }
