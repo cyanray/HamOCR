@@ -18,7 +18,7 @@ public:
 	void Close() 
 	{
 		if (fp != nullptr) fclose(fp);
-		fp = nullptr;
+		fp = nullptr;//防止虚构函数再次对fp使用fclose()
 	}
 	~HDatHelper() { if (fp != nullptr) fclose(fp); }
 private:

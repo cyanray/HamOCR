@@ -1,12 +1,30 @@
 #include "HDatHelper.h"
+#include <exception>
+void HDatHelper::Open(const string & filename)
+{
+	fp = fopen(filename.data(), "rb+");
+	if (fp == nullptr) throw std::exception("Open file failed.");
+	char buff[8]{ 0 };
+	char t = fread(buff, 8, 1, fp);
+	if (strcmp(buff,"HamOCR\n"))
+	{
+		throw std::exception("Not a HDat file.");
+	}
+}
 
+HDat HDatHelper::ReadOne()
+{
+	return HDat();
+}
 
-
-HDatHelper::HDatHelper()
+void HDatHelper::AppendOne(HDat & hdat)
 {
 }
 
+void HDatHelper::RemoveAll(const string & str)
+{
+}
 
-HDatHelper::~HDatHelper()
+void HDatHelper::RemoveAll()
 {
 }
