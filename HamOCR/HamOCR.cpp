@@ -55,3 +55,18 @@ void HamOCR::CreateDataFile(const string & folder, const string & output_file_pa
 		throw ex;
 	}
 }
+
+void HamOCR::LoadDataFile(const string & filename)
+{
+	HDatHelper hh;
+	hh.Open(filename);
+	while (!hh.AtEOF())
+	{
+		HDats.push_back(hh.ReadOne());
+	}
+}
+
+string HamOCR::OCR(Pixels & img)
+{
+	return string();
+}
