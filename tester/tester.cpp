@@ -40,7 +40,7 @@ int main()
 	//auto a4 = Split(img, 58, 4, 74, 20);
 	using namespace Cyan;
 	Pixels img;
-	img.LoadFromJpegFile("E:\\TestData\\verifyPic\\46.jpg");
+	img.LoadFromJpegFile("testData\\verifyPic\\46.jpg");
 	RGB_Binarize(img, 170);
 	auto a = Split(img, Point(10, 4), Point(26, 20));
 	auto b = Split(img, Point(26, 4), Point(42, 20));
@@ -48,7 +48,7 @@ int main()
 	auto d = Split(img, Point(58, 4), Point(74, 20));
 
 	HamOCR ocr;
-	ocr.LoadDataFile("E:\\TestData\\splited\\B.hdat");
+	ocr.LoadDataFile("testData\\splited\\B.hdat");
 	cout << ocr.OCR_fast(a) << ocr.OCR_fast(b) << ocr.OCR_fast(c) << ocr.OCR_fast(d) << endl;
 	cin.get();
 	return 0;
