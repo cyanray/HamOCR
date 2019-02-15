@@ -33,9 +33,8 @@ void HamOCR::CreateDataFile(const string & folder, const string & output_file_pa
 							}
 							tHDat.str = str;
 							tHDat.length = img.height * img.width *img.components;
-							//若使用const_cast后把GetRaw赋值给HDat
-							//HDat会把GetRaw的指针释放
-							//Pixels类也会释放一次该指针
+							//不能直接把Pixels的指针直接给tHDat
+							//Pixels类会释放GetRaw所得的指针
 							//所以只能把数据复制一次
 							tHDat.data = new unsigned char[tHDat.length];
 							memcpy(tHDat.data, img.GetRaw(), tHDat.length);
