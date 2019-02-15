@@ -80,3 +80,20 @@ string HamOCR::OCR(Pixels & img)
 	}
 	return cVal;
 }
+
+string HamOCR::OCR_fast(Pixels & img, unsigned int minHamming)
+{
+	unsigned int minVal = -1;//初始化为最大值
+	string cVal;
+	for (auto& x : HDats)
+	{
+		unsigned int t = Cyan::CalcHamming(img, x.data);
+		if (t < minVal)
+		{
+			minVal = t;
+			cVal = x.str;
+			if (minVal <= minHamming) break;
+		}
+	}
+	return cVal;
+}

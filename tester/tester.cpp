@@ -49,7 +49,7 @@ int main()
 
 	HamOCR ocr;
 	ocr.LoadDataFile("E:\\TestData\\splited\\B.hdat");
-	cout << ocr.OCR(a) << ocr.OCR(b) << ocr.OCR(c) << ocr.OCR(d) << endl;
+	cout << ocr.OCR_fast(a) << ocr.OCR_fast(b) << ocr.OCR_fast(c) << ocr.OCR_fast(d) << endl;
 	cin.get();
 	return 0;
 }
